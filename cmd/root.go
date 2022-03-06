@@ -1,12 +1,17 @@
 package cmd
 
 import (
-	"flag"
+	
 
 	 "github.com/panbhatt/Rainbowprint/internal"
+
+	 colorable "github.com/mattn/go-colorable"
 )
 
 func Main() {
+
+	// This is done for windows support. 
+	defer colorable.EnableColorsStdout(nil)()
 
 	help, fileArguments, files := parametersAndFlags()
 
@@ -17,10 +22,10 @@ func Main() {
 	}
 
 	if fileArguments {
-		text , err := internal.JoinFiles(fileArguments)
+		text , err := internal.JoinFiles(files)
 
 		if(err != nil) {
-			internal.PrintWithScanner(error.Error())
+			internal.PrintWithScanner(err.Error())
 			return
 		}
 

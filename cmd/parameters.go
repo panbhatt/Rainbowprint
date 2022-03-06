@@ -2,6 +2,7 @@ package cmd
 
 import (
 	"flag"
+	"fmt"
 
 	internal "github.com/panbhatt/Rainbowprint/internal"
 )
@@ -35,5 +36,5 @@ Examples:
 
 func printHelp() {
 
-	internal.PrintWithScanner(fmt.Prin)
+	internal.PrintWithScanner(fmt.Sprintf(HELP_MESSAGE, VERSION))
 }

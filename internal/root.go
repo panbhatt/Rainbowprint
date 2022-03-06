@@ -15,7 +15,7 @@ func JoinFiles(files []string) (string, error) {
 	finalText := ""
 
 
-	for i,fl := range files {
+	for _,fl := range files {
 		fileContent, err := os.ReadFile(fl)
 
 		if(err != nil) {
@@ -32,24 +32,24 @@ func PrintWithScanner(text string) {
 		scanner := bufio.NewScanner(strings.NewReader(text))
 
 		for i:=0; scanner.Scan();i++ {
-			rgb := rprint.NewRGB(i)
+			rgb := rprint.NewRGB(float64(i))
 			fmt.Printf("\033[38;2;%d;%d;%dm%s\033[0m\n", rgb.Red, rgb.Green, rgb.Blue, scanner.Text())
 		}
 }
 
 func StartProcessFromStdin() {
 
-	reader := bufio.NewReader(os.Stdio)
+	reader := bufio.NewReader(os.Stdin)
 
 	for i:=0; true; i++ {
-			input, err := reader.ReadRune()
+			input, _, err := reader.ReadRune()
 
 			if(err != nil) {
 				PrintWithScanner(err.Error())
 				break
 			}
 
-			rgb := rprint.NewRGB(i)
+			rgb := rprint.NewRGB(float64(i))
 			fmt.Printf("\033[38;2;%d;%d;%dm%s\033[0m\n", rgb.Red, rgb.Green, rgb.Blue, string(input))
 	}
 

@@ -1,10 +1,14 @@
-package rainbowprint
+package pkg
 
-tyep RGB struct {
+import (
+	"math"
+)
+
+type RGB struct {
 	Red, Green, Blue int 	
 }
 
-func NewRGB(red int, green int, blue int) RGB {
+func NewRGB(i float64) RGB {
 
 	return RGB {
 		int(math.Sin(0.1*i)*127 + 128 ),
