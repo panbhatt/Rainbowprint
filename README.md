@@ -2,7 +2,7 @@
 
 ## This is CLI an application coded in GoLang that rainbow prints the text given to it. 
 
-
+### All the Binaries of this project is present in the releases folder. 
 
 ## HELP
 
