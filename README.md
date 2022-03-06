@@ -22,4 +22,4 @@
 
 ## Links
 
-**Inspired/Copied/Enhanced** by [CHIGO GITHUB](https://github.com/UltiRequiem/chigo).
+**Inspired/Copied** by [CHIGO GITHUB](https://github.com/UltiRequiem/chigo) & [BLOGPOST](https://blog.ultirequiem.com/chigo).
